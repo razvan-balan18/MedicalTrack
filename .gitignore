@@ -1,0 +1,20 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Virtualenv
+venv/
+env/
+
+# .env file for sensitive environment variables
+.env
+
+# Database
+*.sqlite3
+
+# VS Code settings
+.vscode/
+
+# Node modules
+node_modules/
