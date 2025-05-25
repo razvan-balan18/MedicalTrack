@@ -4,7 +4,7 @@ URL = "http://localhost:8000/vitals"
 
 def generate_data():
     return {
-        "patient_id": "P001",
+        "patient_id": "Razvan Balan",
         "heart_rate": random.randint(60, 160),
         "bp_sys": random.randint(90, 160),
         "bp_dia": random.randint(60, 100),
@@ -18,7 +18,7 @@ while True:
         print("Trimis:", data)
     except Exception as e:
         print("Eroare:", e)
-    time.sleep(5)
+    time.sleep(1)
 
 
 # uvicorn api_server:app --reload
