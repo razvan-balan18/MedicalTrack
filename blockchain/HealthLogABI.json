@@ -1,0 +1,176 @@
+[
+    {
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "doctor",
+                "type": "address"
+            }
+        ],
+        "name": "DoctorAuthorized",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "doctor",
+                "type": "address"
+            }
+        ],
+        "name": "DoctorRemoved",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "patientId",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "doctor",
+                "type": "address"
+            }
+        ],
+        "name": "RecordAdded",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_patientId",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_diagnosis",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_treatment",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "_medications",
+                "type": "string"
+            }
+        ],
+        "name": "addHealthRecord",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_doctor",
+                "type": "address"
+            }
+        ],
+        "name": "authorizeDoctor",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_patientId",
+                "type": "string"
+            }
+        ],
+        "name": "getPatientRecords",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "string",
+                        "name": "patientId",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "diagnosis",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "treatment",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "medications",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "timestamp",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "address",
+                        "name": "doctor",
+                        "type": "address"
+                    }
+                ],
+                "internalType": "struct HealthLog.HealthRecord[]",
+                "name": "",
+                "type": "tuple[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_doctor",
+                "type": "address"
+            }
+        ],
+        "name": "isAuthorizedDoctor",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_doctor",
+                "type": "address"
+            }
+        ],
+        "name": "removeDoctor",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]
