@@ -61,4 +61,4 @@ def get_patients(db: Session = Depends(get_db)):
 @app.get("/vitals/{patient_id}")
 def get_vitals_for_patient(patient_id: str, db: Session = Depends(get_db)):
     vitals = db.query(Vital).filter(Vital.patient_id == patient_id).all()
-    return [{"id": i, "heart_rate": v.heart_rate, "bp_sys": v.bp_sys, "bp_dia": v.bp_dia, "spo2": v.spo2} for i, v in enumerate(vitals)]
+    return [{"id": i, "heart_rate": v.heart_rate, "bp_sys": v.bp_sys, "bp_dia": v.bp_dia, "spo2": v.spo2, "timestamp": v.timestamp} for i, v in enumerate(vitals)]

@@ -19,6 +19,7 @@ function Dashboard() {
   const fetchDataForPatient = (patientId) => {
     axios.get(`http://localhost:8000/vitals/${patientId}`)
       .then(res => {
+        console.log('Vitals data:', res.data);  // Add this line to debug
         setData(res.data);  // Salvează datele vitale
       });
   };
@@ -327,7 +328,7 @@ function Dashboard() {
                           padding: '1rem',
                           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                           color: 'white'
-                        }}>{index + 1}</td>
+                        }}>{new Date(record.timestamp).toLocaleString()}</td>
                         <td style={{
                           padding: '1rem',
                           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
